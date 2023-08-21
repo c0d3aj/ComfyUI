@@ -3,10 +3,14 @@ __pycache__/
 output/
 input/
 !input/example.png
-# models/
+models/
 temp/
-# custom_nodes/
-# !custom_nodes/example_node.py.example
+custom_nodes/
+!custom_nodes/example_node.py.example
+!custom_nodes/comfy_controlnet_preprocessors
+!custom_nodes/ComfyUI-Impact-Pack
+!custom_nodes/ComfyUI-Manager
+!custom_nodes/was-node-suite-comfyui
 extra_model_paths.yaml
 /.vs
 .idea/
