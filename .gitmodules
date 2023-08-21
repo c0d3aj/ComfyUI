@@ -10,9 +10,3 @@
 [submodule "custom_nodes/comfy_controlnet_preprocessors"]
 	path = custom_nodes/comfy_controlnet_preprocessors
 	url = https://github.com/Fannovel16/comfy_controlnet_preprocessors
-[submodule "cgc-comfy-models"]
-	path = cgc-comfy-models
-	url = https://git.quantdevlabs.com/machine-learning/cgc-comfy-models
-[submodule "models"]
-	path = models
-	url = https://git.quantdevlabs.com/machine-learning/cgc-comfy-models
