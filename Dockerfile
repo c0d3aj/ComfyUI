@@ -22,8 +22,7 @@ RUN apt clean && rm -rf /var/lib/apt/lists/*
 
 FROM build as build-env
 COPY requirements.txt /requirements.txt
-RUN /venv/bin/pip install --no-cache-dir -U torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers
-RUN /venv/bin/pip install -U torch-tensorrt torchtext
+RUN /venv/bin/pip install torch torchvision torchaudio torch-tensorrt torchtext --extra-index-url https://download.pytorch.org/whl/cu118 xformers
 RUN /venv/bin/pip install --disable-pip-version-check --no-cache-dir -r /requirements.txt
 
 FROM build-env AS build-sec
