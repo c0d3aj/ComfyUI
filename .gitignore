@@ -11,6 +11,7 @@ custom_nodes/
 !custom_nodes/ComfyUI-Impact-Pack
 !custom_nodes/ComfyUI-Manager
 !custom_nodes/was-node-suite-comfyui
+!custom_nodes/comfyui_controlnet_aux
 extra_model_paths.yaml
 /.vs
 .idea/
