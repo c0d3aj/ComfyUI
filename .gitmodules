@@ -10,3 +10,24 @@
 [submodule "custom_nodes/comfy_controlnet_preprocessors"]
 	path = custom_nodes/comfy_controlnet_preprocessors
 	url = https://github.com/Fannovel16/comfy_controlnet_preprocessors
+[submodule "custom_nodes/comfyui_controlnet_aux"]
+	path = custom_nodes/comfyui_controlnet_aux
+	url = https://github.com/Fannovel16/comfyui_controlnet_aux.git
+[submodule "custom_nodes/efficiency-nodes-comfyui"]
+	path = custom_nodes/efficiency-nodes-comfyui
+	url = https://github.com/LucianoCirino/efficiency-nodes-comfyui.git
+[submodule "custom_nodes/Derfuu_ComfyUI_ModdedNodes"]
+	path = custom_nodes/Derfuu_ComfyUI_ModdedNodes
+	url = https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git
+[submodule "custom_nodes/ComfyUI_UltimateSDUpscale"]
+	path = custom_nodes/ComfyUI_UltimateSDUpscale
+	url = https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
+[submodule "custom_nodes/ComfyUI_Comfyroll_CustomNodes"]
+	path = custom_nodes/ComfyUI_Comfyroll_CustomNodes
+	url = https://github.com/RockOfFire/ComfyUI_Comfyroll_CustomNodes.git
+[submodule "custom_nodes/SeargeSDXL"]
+	path = custom_nodes/SeargeSDXL
+	url = https://github.com/SeargeDP/SeargeSDXL.git
+[submodule "custom_nodes/ComfyLiterals"]
+	path = custom_nodes/ComfyLiterals
+	url = https://github.com/M1kep/ComfyLiterals.git
