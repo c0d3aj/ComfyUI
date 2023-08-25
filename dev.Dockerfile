@@ -7,6 +7,7 @@ RUN /usr/local/bin/python -m pip install --no-cache-dir --upgrade pip setuptools
 COPY ./requirements.txt /requirements.txt
 RUN pip install torch torchvision torchaudio torch-tensorrt torchtext --extra-index-url https://download.pytorch.org/whl/cu118 xformers
 RUN pip install --no-cache-dir -r /requirements.txt
+RUN pip install llvmlite cython numba
 WORKDIR /usr/app
 COPY ./models ./models
 COPY ./custom_nodes ./custom_nodes
