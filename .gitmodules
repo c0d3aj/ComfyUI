@@ -7,9 +7,6 @@
 [submodule "custom_nodes/was-node-suite-comfyui"]
 	path = custom_nodes/was-node-suite-comfyui
 	url = https://github.com/WASasquatch/was-node-suite-comfyui
-[submodule "custom_nodes/comfy_controlnet_preprocessors"]
-	path = custom_nodes/comfy_controlnet_preprocessors
-	url = https://github.com/Fannovel16/comfy_controlnet_preprocessors
 [submodule "custom_nodes/comfyui_controlnet_aux"]
 	path = custom_nodes/comfyui_controlnet_aux
 	url = https://github.com/Fannovel16/comfyui_controlnet_aux.git
