@@ -19,12 +19,3 @@
 [submodule "custom_nodes/ComfyLiterals"]
 	path = custom_nodes/ComfyLiterals
 	url = https://github.com/M1kep/ComfyLiterals.git
-[submodule "custom_nodes_stage_2/was-node-suite-comfyui"]
-	path = custom_nodes_stage_2/was-node-suite-comfyui
-	url = https://github.com/WASasquatch/was-node-suite-comfyui.git
-[submodule "custom_nodes_stage_2/comfyui_controlnet_aux"]
-	path = custom_nodes_stage_2/comfyui_controlnet_aux
-	url = https://github.com/Fannovel16/comfyui_controlnet_aux.git
-[submodule "custom_nodes_stage_2/ComfyUI-Impact-Pack"]
-	path = custom_nodes_stage_2/ComfyUI-Impact-Pack
-	url = https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
