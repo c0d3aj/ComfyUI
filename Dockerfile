@@ -7,7 +7,7 @@ RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel
 COPY ./requirements.txt /requirements.txt
 # RUN pip install torch torchvision torchaudio torch-tensorrt torchtext --extra-index-url https://download.pytorch.org/whl/cu118 xformers
 # RUN pip install llvmlite cython numba
-RUN pip install opencv-contrib-python
+
 RUN pip install --no-cache-dir -r /requirements.txt
 WORKDIR /usr/app
 COPY ./web ./web
@@ -20,6 +20,13 @@ COPY ./input ./input
 COPY ./output ./output
 COPY ./models ./models
 COPY *.py ./
-# RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
 RUN python -c "import os, time; node_paths = [d[0] for d in os.walk('custom_nodes') if 'prestartup_script.py' in d[2]]; node_prestartup_times = []; [node_prestartup_times.append((time.time(), p)) for p in node_paths if os.system(f'python {os.path.join(p, \"prestartup_script.py\")}') == 0]; [print(f'{n[0]} seconds: {n[1]}') for n in node_prestartup_times]"
+RUN pip install opencv-contrib-python
+RUN pip install --upgrade opencv-python
+COPY ./custom_nodes_stage_2/001 ./custom_nodes
+RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
+COPY ./custom_nodes_stage_2/002 ./custom_nodes
+RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
+COPY ./custom_nodes_stage_2/003 ./custom_nodes
+RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
 CMD ["python", "main.py", "--listen", "--enable-cors-header"]
