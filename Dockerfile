@@ -24,10 +24,11 @@ COPY ./models ./models
 COPY *.py ./
 RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
 RUN find custom_nodes -type f -name "requirements.txt" -exec pip install -r {} \;
-COPY ./bad_custom_nodes/was-node-suite-comfyui ./custom_nodes/was-node-suite-comfyui
+
+## Build final image with "BAD_NODES"
+RUN git clone https://github.com/WASasquatch/was-node-suite-comfyui ./custom_nodes/was-node-suite-comfyui
 RUN pip install -r ./custom_nodes/was-node-suite-comfyui/requirements.txt
-COPY ./bad_custom_nodes/ComfyUI-Impact-Pack ./custom_nodes/ComfyUI-Impact-Pack
-RUN pip install -r ./custom_nodes/ComfyUI-Impact-Pack/requirements.txt
-COPY ./bad_custom_nodes/comfyui_controlnet_aux ./custom_nodes/comfyui_controlnet_aux
-RUN pip install -r ./custom_nodes/comfyui_controlnet_aux/requirements.txt
+RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack ./custom_nodes/ComfyUI-Impact-Pack
+RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
+RUN git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git ./custom_nodes/comfyui_controlnet_aux
 CMD ["python", "main.py", "--listen", "--enable-cors-header"]
