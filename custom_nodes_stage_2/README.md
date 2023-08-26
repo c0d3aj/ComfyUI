@@ -1,11 +1,7 @@
-# how to?
+# Stage 2 of custom_nodes package
 
-https://github.com/WASasquatch/was-node-suite-comfyui
+Due to errors in running Comfy, install 1 by 1 in this order:
 
-
-# [submodule "custom_nodes/ComfyUI-Impact-Pack"]
-# 	path = custom_nodes/ComfyUI-Impact-Pack
-# 	url = https://github.com/ltdrdata/ComfyUI-Impact-Pack	
-# [submodule "custom_nodes/comfyui_controlnet_aux"]
-# 	path = custom_nodes/comfyui_controlnet_aux
-# 	url = https://github.com/Fannovel16/comfyui_controlnet_aux.git
+1. [https://github.com/WASasquatch/was-node-suite-comfyui]
+2. [https://github.com/ltdrdata/ComfyUI-Impact-Pack]
+3. [https://github.com/Fannovel16/comfyui_controlnet_aux.git]
