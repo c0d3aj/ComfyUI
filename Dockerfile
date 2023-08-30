@@ -31,4 +31,5 @@ RUN pip install -r ./custom_nodes/was-node-suite-comfyui/requirements.txt
 RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack ./custom_nodes/ComfyUI-Impact-Pack
 RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
 RUN git clone -b tile_preprocessor https://github.com/c0d3aj/comfyui_controlnet_aux ./custom_nodes/comfyui_controlnet_aux
+RUN pip install timm==0.6.13
 CMD ["python", "main.py", "--listen", "--enable-cors-header"]
