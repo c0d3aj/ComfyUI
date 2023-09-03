@@ -26,10 +26,15 @@ RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
 RUN find custom_nodes -type f -name "requirements.txt" -exec pip install -r {} \;
 
 ## Build final image with "BAD_NODES"
-RUN git clone https://github.com/WASasquatch/was-node-suite-comfyui ./custom_nodes/was-node-suite-comfyui
-RUN pip install -r ./custom_nodes/was-node-suite-comfyui/requirements.txt
-RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack ./custom_nodes/ComfyUI-Impact-Pack
-RUN find custom_nodes -type f -name "prestartup_script.py" -exec python {} \;
-RUN git clone -b tile_preprocessor https://github.com/c0d3aj/comfyui_controlnet_aux ./custom_nodes/comfyui_controlnet_aux
-RUN pip install timm==0.6.13
+RUN git clone https://github.com/WASasquatch/was-node-suite-comfyui ./custom_nodes/was-node-suite-comfyui \
+    && pip install -r ./custom_nodes/was-node-suite-comfyui/requirements.txt \
+    && git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack ./custom_nodes/ComfyUI-Impact-Pack \
+    && find custom_nodes -type f -name "prestartup_script.py" -exec python {} \; \
+    && git clone -b tile_preprocessor https://github.com/c0d3aj/comfyui_controlnet_aux ./custom_nodes/comfyui_controlnet_aux \
+    && pip install timm==0.6.13
+
+FROM nvcr.io/nvidia/pytorch:23.07-py3 as runtime
+WORKDIR /usr/app
+COPY --from=build /usr/local/lib/python3.10/dist-packages /usr/local/lib/python3.10/dist-packages
+COPY --from=build /usr/app /usr/app
 CMD ["python", "main.py", "--listen", "--enable-cors-header"]
